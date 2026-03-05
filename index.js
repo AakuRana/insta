@@ -43,7 +43,7 @@ app.use("/user", userRoutes);
 async function startServer() {
     await connectDB(); // Connect to MongoDB Atlas first
     app.listen(PORT, () => {
-        console.log(🚀 Server running at http://localhost:${PORT});
+        console.log(` Server running at http://localhost:${PORT}`);
     });
 }
 
